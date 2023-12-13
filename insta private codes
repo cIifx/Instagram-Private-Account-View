@@ -1,0 +1,36 @@
+import random
+
+def get_private_account_views(username: str) -> int:
+    """
+    Function to simulate the number of views on an Instagram private account.
+
+    Parameters:
+    - username: str
+        The username of the private Instagram account.
+
+    Returns:
+    - int:
+        The number of views on the private account.
+
+    Raises:
+    - ValueError:
+        Raises an error if the username is empty or contains only whitespace.
+    """
+
+    # Checking if the username is empty or contains only whitespace
+    if not username.strip():
+        raise ValueError("Username cannot be empty or contain only whitespace.")
+
+    # Simulating the number of views on the private account
+    views = random.randint(100, 1000)
+
+    return views
+
+# Example usage of the get_private_account_views function:
+
+try:
+    username = input("Enter the username of the private Instagram account: ")
+    views = get_private_account_views(username)
+    print(f"The number of views on the private account '{username}' is {views}.")
+except ValueError as e:
+    print(f"Error: {e}")
